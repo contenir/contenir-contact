@@ -12,6 +12,7 @@ use function in_array;
 use function is_string;
 use function preg_replace;
 use function strtolower;
+use function strtoupper;
 use function trim;
 use function ucfirst;
 
@@ -89,10 +90,15 @@ final readonly class BusinessType implements Stringable
     }
 
     /**
-     * The type's name as a person reads it: "Food establishment".
+     * The type's name as a person reads it: "Food establishment". A name in capitals is an
+     * acronym, kept as it is: "NGO".
      */
     public function label(): string
     {
+        if (strtoupper($this->name) === $this->name) {
+            return $this->name;
+        }
+
         return ucfirst(strtolower((string) preg_replace(
             '/(?<=[a-z])(?=[A-Z])/',
             replacement: ' ',
