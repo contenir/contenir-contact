@@ -156,6 +156,40 @@ final class ContactSettingsTest extends TestCase
     }
 
     #[Test]
+    public function readsOfficesAsTheCmsSavesThem(): void
+    {
+        $business = BusinessFactory::make(['telephone' => '03 9428 0228'], [
+            ['fields' => [
+                'id'        => 'a',
+                'name'      => 'Melbourne',
+                'primary'   => '0',
+                'telephone' => '',
+                'latitude'  => '-37.7787',
+                'longitude' => '144.9874',
+            ]],
+            ['fields' => [
+                'id'        => 'b',
+                'name'      => 'Perth',
+                'primary'   => '1',
+                'search'    => '1',
+                'telephone' => '08 9000 0000',
+            ]],
+        ]);
+        $melbourne = $business->offices->byId('a');
+
+        static::assertSame(
+            ['b', '03 9428 0228', [], -37.7787, '08 9000 0000'],
+            [
+                $business->offices->primary()?->id,
+                (string) $melbourne?->telephone,
+                $melbourne?->overridden,
+                $melbourne?->geolocation?->latitude,
+                (string) $business->offices->byId('b')?->telephone,
+            ],
+        );
+    }
+
+    #[Test]
     public function readsTheBusiness(): void
     {
         $business = BusinessFactory::make([

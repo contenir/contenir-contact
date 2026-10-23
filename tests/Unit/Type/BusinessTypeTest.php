@@ -109,7 +109,7 @@ final class BusinessTypeTest extends TestCase
     public function writesItsNameAsAPersonReadsIt(): void
     {
         static::assertSame(
-            ['Food establishment', 'Organization', 'Ngo'],
+            ['Food establishment', 'Organization', 'NGO'],
             [
                 BusinessType::from('FoodEstablishment')->label(),
                 BusinessType::from('Organization')->label(),
