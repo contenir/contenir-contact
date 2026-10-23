@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-23
+
 ### Added
 
 - Office rows as the CMS's Office details saves them (`['fields' => [...]]`): empty values inherit the business's,
