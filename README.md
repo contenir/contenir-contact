@@ -1,5 +1,8 @@
 # contenir/contenir-contact
 
+[![Continuous Integration](https://github.com/contenir/contenir-contact/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/contenir/contenir-contact/actions/workflows/continuous-integration.yml)
+[![codecov](https://codecov.io/gh/contenir/contenir-contact/graph/badge.svg)](https://codecov.io/gh/contenir/contenir-contact)
+
 Framework-free contact details for Contenir sites: the business and its offices, read from the site's settings, for
 page templates, Contact blocks and search engines alike.
 
