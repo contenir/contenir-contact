@@ -41,7 +41,7 @@ final readonly class OfficeRows
         $ids     = [];
         $primary = null;
         foreach (is_array($rows) ? $rows : [] as $row) {
-            $row    = is_array($row) ? $row : [];
+            $row    = CmsRow::flat($row);
             $values = new SettingsArray($row);
             $name   = $values->text('name');
             $id     = '' === $values->text('id') ? $name : $values->text('id');

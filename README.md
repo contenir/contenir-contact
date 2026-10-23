@@ -84,6 +84,10 @@ An office has the business's value for each of these unless its row has the key:
 `reservation` and `star_rating`. A key with a value is the office's own; a key that is empty (`null`, `''` or `[]`)
 means the office has none, whatever the business has. `$office->overridden` and `$office->cleared` name them.
 
+Rows saved by the CMS's Office details come as `['fields' => [...]]` with every input posted, so there an empty
+value inherits the business's (the CMS has no way yet to say "none"), and flat `latitude` and `longitude` become
+`geolocation`. Rows written by hand keep the rules above.
+
 The first office marked `primary` is the primary office, or the first office when none is. The primary office is
 always shown to search engines. Rows without a name, and a second row with an id already seen, are left out.
 

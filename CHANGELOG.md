@@ -8,6 +8,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- Office rows as the CMS's Office details saves them (`['fields' => [...]]`): empty values inherit the business's,
+  and flat `latitude` and `longitude` become `geolocation`.
 - `ContactSettings::fromSettings()`: the business under `contact.business` and its offices under `contact.office`,
   each office with the business's values unless it overrides them, or overrides them with none.
 - Values written for the site's country: `Telephone` (national, international and `tel:`), `Email`, `TaxId`
