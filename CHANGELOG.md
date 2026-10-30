@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-30
+
 ### Added
 
 - `Format\EmailEscaper`: an email address as decimal entities (`text()`), and its mailto: link as entities and a
